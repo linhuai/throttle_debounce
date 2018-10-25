@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+</head>
+<body>
+  <button id="debounce-btn" type="button">debounce</button>
+  <button id="throttle-btn" type="button">throttle</button>
+  <script src="../throttle_debounce.js"></script>
+  <script>
+    let $debounceBtn = document.querySelector('#debounce-btn')
+    function handle1 () {
+      console.log('debounce')
+    }
+    $debounceBtn.addEventListener('click', debounce(handle1, 1000))
+
+    let $throttleBtn = document.querySelector('#throttle-btn')
+    function handle2 () {
+      console.log('throttle')
+    }
+    $throttleBtn.addEventListener('click', throttle(handle2, 1000))
+    
+  </script>
+</body>
+</html>
